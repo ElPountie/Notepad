@@ -9,6 +9,11 @@ Notepad::Notepad(QWidget * parent) :
 ui.setupUi(this); //methode herite de QMainWindow
 connect(ui.actionOpen, &QAction::triggered, this, &Notepad::openFile);
 connect(ui.textEdit, SIGNAL(textChanged()), this, SLOT(textChanged()));
+connect(ui.actionCopy, &QAction::triggered, this, &Notepad::copyText);
+connect(ui.actionCut, &QAction::triggered, this, &Notepad::cutText);
+connect(ui.actionPaste, &QAction::triggered, this, &Notepad::pasteText);
+connect(ui.actionUndo, &QAction::triggered, this, &Notepad::undoEdit);
+
 }
 
 Notepad::~Notepad(){}
@@ -19,6 +24,26 @@ void Notepad::openFile() {
 
 void Notepad :: textChanged() {
 
+}
+
+void Notepad::copyText()
+{
+	ui.textEdit->copy();
+}
+
+void Notepad::cutText()
+{
+	ui.textEdit->cut();
+}
+
+void Notepad::pasteText()
+{
+	ui.textEdit->paste();
+}
+
+void Notepad::undoEdit()
+{
+	ui.textEdit->undo();
 }
 
 void Notepad::on_actionNew_triggered()
@@ -75,4 +100,9 @@ void Notepad::on_actionSave_as_triggered()
 		file.write(ui.textEdit->toPlainText().toUtf8());
 		file.commit();
 	}
+}
+
+void Notepad::on_actionExit_triggered()
+{
+	this->close();
 }

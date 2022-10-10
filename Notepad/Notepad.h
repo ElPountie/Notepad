@@ -16,11 +16,17 @@ public:
 private:
 	Ui::NotepadClass ui; 
 	QString currentFile;
+
+private slots: //Liste de toutes les actions réalisable sur la fenetre ATTENTION : les action doivent avoir le meme nom !!!
 	void openFile();
 	void textChanged();
-private slots: //Liste de toutes les actions réalisable sur la fenetre ATTENTION : les action doivent avoir le meme nom !!!
+	void copyText();
+	void cutText();
+	void pasteText();
+	void undoEdit();
 	void on_actionNew_triggered();
 	void on_actionOpen_triggered();
 	void on_actionSave_triggered();
 	void on_actionSave_as_triggered();
+	void on_actionExit_triggered();
 };
