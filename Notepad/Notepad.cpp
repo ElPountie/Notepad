@@ -2,6 +2,7 @@
 #include "qfiledialog.h"
 #include "qmessagebox.h"
 #include "qsavefile.h"
+#include "qfontdialog.h"
 
 Notepad::Notepad(QWidget * parent) :
 	QMainWindow(parent) //heriter les attributs de la fenetre parent sur la fille
@@ -13,7 +14,10 @@ connect(ui.actionCopy, &QAction::triggered, this, &Notepad::copyText);
 connect(ui.actionCut, &QAction::triggered, this, &Notepad::cutText);
 connect(ui.actionPaste, &QAction::triggered, this, &Notepad::pasteText);
 connect(ui.actionUndo, &QAction::triggered, this, &Notepad::undoEdit);
-
+connect(ui.actionFont, &QAction::triggered, this, &Notepad::selectFont);
+connect(ui.actionItalic, &QAction::triggered, this, &Notepad::switchItalic);
+connect(ui.actionBold, &QAction::triggered, this, &Notepad::switchBold);
+connect(ui.actionUnderline, &QAction::triggered, this, &Notepad::switchUnderline);
 }
 
 Notepad::~Notepad(){}
@@ -44,6 +48,35 @@ void Notepad::pasteText()
 void Notepad::undoEdit()
 {
 	ui.textEdit->undo();
+}
+
+void Notepad::selectFont()
+{
+	bool fontSelected;
+	QFont font = QFontDialog::getFont(&fontSelected, this);
+	if (fontSelected) {
+		ui.textEdit->setCurrentFont(font);
+	}
+}
+
+void Notepad::switchItalic(bool italic)
+{
+	ui.textEdit->setFontItalic(italic);
+}
+
+void Notepad::switchBold(bool bold)
+{
+	if (bold) {
+		ui.textEdit->setFontWeight(QFont::Bold);
+	}
+	else {
+		ui.textEdit->setFontWeight(QFont::Normal);
+	}
+}
+
+void Notepad::switchUnderline(bool underline)
+{
+	ui.textEdit->setFontUnderline(underline);
 }
 
 void Notepad::on_actionNew_triggered()

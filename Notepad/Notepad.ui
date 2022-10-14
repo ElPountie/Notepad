@@ -55,6 +55,10 @@
     <addaction name="separator"/>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionItalic"/>
+    <addaction name="actionBold"/>
+    <addaction name="actionUnderline"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -110,6 +114,9 @@
    </property>
   </action>
   <action name="actionCopy">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>&amp;Copy</string>
    </property>
@@ -132,6 +139,30 @@
   <action name="actionRedo">
    <property name="text">
     <string>&amp;Redo</string>
+   </property>
+  </action>
+  <action name="actionItalic">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Italic</string>
+   </property>
+  </action>
+  <action name="actionBold">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Bold</string>
+   </property>
+  </action>
+  <action name="actionUnderline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Underline</string>
    </property>
   </action>
  </widget>
