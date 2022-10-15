@@ -61,6 +61,9 @@
     <addaction name="actionUnderline"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
     <property name="title">
      <string>About</string>
     </property>
