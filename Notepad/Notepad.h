@@ -28,6 +28,7 @@ private slots: //Liste de toutes les actions réalisable sur la fenetre ATTENTION
 	void switchItalic(bool italic);
 	void switchBold(bool bold);
 	void switchUnderline(bool underline);
+	void dialogAbout();
 	void on_actionNew_triggered();
 	void on_actionOpen_triggered();
 	void on_actionSave_triggered();

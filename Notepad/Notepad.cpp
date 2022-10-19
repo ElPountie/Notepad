@@ -18,6 +18,7 @@ connect(ui.actionFont, &QAction::triggered, this, &Notepad::selectFont);
 connect(ui.actionItalic, &QAction::triggered, this, &Notepad::switchItalic);
 connect(ui.actionBold, &QAction::triggered, this, &Notepad::switchBold);
 connect(ui.actionUnderline, &QAction::triggered, this, &Notepad::switchUnderline);
+connect(ui.actionAbout, &QAction::triggered, this, &Notepad::dialogAbout);
 }
 
 Notepad::~Notepad(){}
@@ -77,6 +78,11 @@ void Notepad::switchBold(bool bold)
 void Notepad::switchUnderline(bool underline)
 {
 	ui.textEdit->setFontUnderline(underline);
+}
+
+void Notepad::dialogAbout()
+{
+	QMessageBox::information(this, "About MDI", "The <strong>Notepad</strong> example demonstrates how to code a basic text editor using QtWidgets", QMessageBox::Ok);
 }
 
 void Notepad::on_actionNew_triggered()

@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>680</width>
+    <width>681</width>
     <height>390</height>
    </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>Notepad</string>
@@ -23,12 +26,21 @@
     </item>
    </layout>
   </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>680</width>
+     <width>681</width>
      <height>22</height>
     </rect>
    </property>
@@ -67,41 +79,53 @@
     <property name="title">
      <string>About</string>
     </property>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuAbout"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/new.png</normaloff>:/Notepad/images/new.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;New</string>
    </property>
   </action>
   <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/open.png</normaloff>:/Notepad/images/open.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Open</string>
    </property>
   </action>
   <action name="actionSave">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/save.png</normaloff>:/Notepad/images/save.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Save</string>
    </property>
   </action>
   <action name="actionSave_as">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/save_as.png</normaloff>:/Notepad/images/save_as.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Save as</string>
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/exit.png</normaloff>:/Notepad/images/exit.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Exit</string>
    </property>
@@ -112,6 +136,10 @@
    </property>
   </action>
   <action name="actionFont">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/font.png</normaloff>:/Notepad/images/font.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Font</string>
    </property>
@@ -120,26 +148,46 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/copy.png</normaloff>:/Notepad/images/copy.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Copy</string>
    </property>
   </action>
   <action name="actionCut">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/cut.png</normaloff>:/Notepad/images/cut.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Cut</string>
    </property>
   </action>
   <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/paste.png</normaloff>:/Notepad/images/paste.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Paste</string>
    </property>
   </action>
   <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/edit_undo.png</normaloff>:/Notepad/images/edit_undo.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Undo</string>
    </property>
   </action>
   <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/edit_redo.png</normaloff>:/Notepad/images/edit_redo.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Redo</string>
    </property>
@@ -147,6 +195,10 @@
   <action name="actionItalic">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/italic.png</normaloff>:/Notepad/images/italic.png</iconset>
    </property>
    <property name="text">
     <string>Italic</string>
@@ -156,6 +208,10 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/bold.png</normaloff>:/Notepad/images/bold.png</iconset>
+   </property>
    <property name="text">
     <string>Bold</string>
    </property>
@@ -164,8 +220,17 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/underline.png</normaloff>:/Notepad/images/underline.png</iconset>
+   </property>
    <property name="text">
     <string>Underline</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
