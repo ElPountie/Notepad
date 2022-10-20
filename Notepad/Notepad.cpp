@@ -3,6 +3,7 @@
 #include "qmessagebox.h"
 #include "qsavefile.h"
 #include "qfontdialog.h"
+#include "qcolordialog.h"
 
 Notepad::Notepad(QWidget * parent) :
 	QMainWindow(parent) //heriter les attributs de la fenetre parent sur la fille
@@ -19,6 +20,7 @@ connect(ui.actionItalic, &QAction::triggered, this, &Notepad::switchItalic);
 connect(ui.actionBold, &QAction::triggered, this, &Notepad::switchBold);
 connect(ui.actionUnderline, &QAction::triggered, this, &Notepad::switchUnderline);
 connect(ui.actionAbout, &QAction::triggered, this, &Notepad::dialogAbout);
+connect(ui.actionColor, &QAction::triggered, this, &Notepad::changeColor);
 }
 
 Notepad::~Notepad(){}
@@ -83,6 +85,15 @@ void Notepad::switchUnderline(bool underline)
 void Notepad::dialogAbout()
 {
 	QMessageBox::information(this, "About MDI", "The <strong>Notepad</strong> example demonstrates how to code a basic text editor using QtWidgets", QMessageBox::Ok);
+}
+
+void Notepad::changeColor()
+{
+	QString title = "Selectionner une couleur";
+	QColor color = QColorDialog::getColor(Qt::white,this,title);
+	if (color.isValid()) {
+		ui.textEdit->setTextColor(color);
+	}
 }
 
 void Notepad::on_actionNew_triggered()

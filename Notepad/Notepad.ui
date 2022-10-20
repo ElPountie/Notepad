@@ -33,6 +33,21 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSave_as"/>
+   <addaction name="actionExit"/>
+   <addaction name="actionColor"/>
+   <addaction name="actionFont"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionCut"/>
+   <addaction name="actionPaste"/>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionItalic"/>
+   <addaction name="actionBold"/>
+   <addaction name="actionUnderline"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -131,6 +146,10 @@
    </property>
   </action>
   <action name="actionColor">
+   <property name="icon">
+    <iconset resource="Notepad.qrc">
+     <normaloff>:/Notepad/images/pencil.png</normaloff>:/Notepad/images/pencil.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Color</string>
    </property>
